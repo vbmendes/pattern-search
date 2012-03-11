@@ -1,6 +1,10 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
 import unittest
 
 from pattern_search.nary_search_tree import Tree, Node
+
 
 class NodeTestCase(unittest.TestCase):
     

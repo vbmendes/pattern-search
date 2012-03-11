@@ -1,4 +1,5 @@
-# coding: utf8
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 
 
 class PatternSearchDict(dict):
