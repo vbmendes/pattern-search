@@ -28,12 +28,3 @@ class PatternSearchDict(dict):
     def push_items(self, items):
         for obj in items:
             self.push(obj)
-
-
-if __name__ == '__main__':
-    cities = json.loads(open('./fixtures/cities.json').read())
-    tree = Tree(key_names=['nome'])
-    for city in cities:
-        tree.push(city)
-    tree = Tree.from_items(cities)
-    natal = tree['natal']
