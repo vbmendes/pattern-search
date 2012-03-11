@@ -1,0 +1,4 @@
+default: tests
+
+tests:
+	nosetests
