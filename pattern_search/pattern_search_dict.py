@@ -7,6 +7,12 @@ class PatternSearchDict(dict):
     def __init__(self, get_names):
         self.get_names = get_names
 
+    def __getitem__(self, key):
+        try:
+            return dict.__getitem__(self, key)
+        except KeyError:
+            return []
+
     def __setitem__(self, key, obj):
         for i in xrange(1, len(key) + 1):
             tree_node = self.setdefault(key[:i], [])

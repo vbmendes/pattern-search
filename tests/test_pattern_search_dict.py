@@ -6,13 +6,23 @@ import unittest
 from pattern_search.pattern_search_dict import PatternSearchDict
 
 
-class NArySearchTree(unittest.TestCase):
+class PatternSearchDictTestCase(unittest.TestCase):
 
     def setUp(self):
         self.cities = PatternSearchDict(get_names=lambda obj: obj['name'])
 
     def test_dict_initialization(self):
         self.assertIsInstance(self.cities, PatternSearchDict)
+
+    def test_search_in_empty_dict_should_return_empty_list(self):
+        self.assertEqual([], self.cities['nat'])
+
+    def test_key_in_empty_dict_should_return_false(self):
+        self.assertFalse('nat' in self.cities)
+
+    def test_search_dont_create_empty_list_in_dict(self):
+        self.assertEqual([], self.cities['nat'])
+        self.assertFalse('nat' in self.cities)
 
     def test_dict_pushed_item_is_searchable(self):
         item = {'name': 'natal'}
